@@ -17,9 +17,9 @@ use Flexic\Regex\Flag\MatchHandler\MatchHandlerFlagInterface;
 use Flexic\Regex\Flag\SplitHandler\SplitHandlerFlagInterface;
 use Flexic\Regex\Result\MatchCollection;
 
-final class Regex
+final class StaticRegex
 {
-    public function match(
+    public static function match(
         Pattern|string $pattern,
         string $subject,
         int $offset = 0,
@@ -33,7 +33,7 @@ final class Regex
         );
     }
 
-    public function matchAll(
+    public static function matchAll(
         Pattern|string $pattern,
         string $subject,
         int $offset = 0,
@@ -47,7 +47,7 @@ final class Regex
         );
     }
 
-    public function split(
+    public static function split(
         Pattern|string $pattern,
         string $subject,
         int $limit = -1,
@@ -61,7 +61,7 @@ final class Regex
         );
     }
 
-    public function grep(
+    public static function grep(
         Pattern|string $pattern,
         array $input,
         array|GrepHandlerFlagInterface|int ...$flags,
@@ -73,7 +73,7 @@ final class Regex
         );
     }
 
-    public function filter(
+    public static function filter(
         Pattern|string|array $pattern,
         string|array $replacement,
         array|string $subject,
@@ -89,7 +89,7 @@ final class Regex
         );
     }
 
-    public function replace(
+    public static function replace(
         Pattern|string|array $pattern,
         string|array $replacement,
         string|array $subject,
