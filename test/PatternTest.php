@@ -1,5 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * Copyright (c) 2022-2022 Flexic-Systems
+ *
+ * @author Hendrik Legge <hendrik.legge@themepoint.de>
+ *
+ * @version 1.0.0
+ */
+
 namespace Flexic\Regex\Test;
 
 /**
@@ -7,14 +17,15 @@ namespace Flexic\Regex\Test;
  *
  * @covers \Flexic\Regex\Pattern
  */
-class PatternTest extends AbstractTestCase
+final class PatternTest extends AbstractTestCase
 {
     public function testIfCanSetupAndStringify(): void
     {
-        $pattern = new \Flexic\Regex\Pattern('[a-zA-Z0-9]',
+        $pattern = new \Flexic\Regex\Pattern(
+            '[a-zA-Z0-9]',
             \Flexic\Regex\Modifier\SingleLine::class,
-            new \Flexic\Regex\Modifier\MultiLine,
-            ''
+            new \Flexic\Regex\Modifier\MultiLine(),
+            '',
         );
 
         self::assertInstanceOf(\Flexic\Regex\Pattern::class, $pattern);

@@ -13,8 +13,6 @@ declare(strict_types=1);
 namespace Flexic\Regex\Test;
 
 use PHPUnit\Framework;
-use PHPUnit\Framework\Constraint\IsIdentical;
-use PHPUnit\Framework\Constraint\RegularExpression;
 
 /**
  * @internal

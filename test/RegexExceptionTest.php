@@ -1,5 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * Copyright (c) 2022-2022 Flexic-Systems
+ *
+ * @author Hendrik Legge <hendrik.legge@themepoint.de>
+ *
+ * @version 1.0.0
+ */
+
 namespace Flexic\Regex\Test;
 
 /**
@@ -7,7 +17,7 @@ namespace Flexic\Regex\Test;
  *
  * @covers \Flexic\Regex\RegexException
  */
-class RegexExceptionTest extends AbstractTestCase
+final class RegexExceptionTest extends AbstractTestCase
 {
     public function testCanGetAction(): void
     {
