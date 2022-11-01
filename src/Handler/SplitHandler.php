@@ -14,6 +14,7 @@ namespace Flexic\Regex\Handler;
 
 use Flexic\Regex\Flag\SplitHandler\SplitHandlerFlagInterface;
 use Flexic\Regex\Pattern;
+use Flexic\Regex\RegexException;
 use Flexic\Regex\Result\MatchCollection;
 
 final class SplitHandler extends AbstractHandler
@@ -35,7 +36,7 @@ final class SplitHandler extends AbstractHandler
         );
 
         if (false === $matches) {
-            throw new \RuntimeException(\sprintf('Error while splitting subject "%s" with pattern "%s"', $subject, $pattern));
+            throw new RegexException('preg_split', \sprintf('Error while splitting subject "%s" with pattern "%s"', $subject, $pattern));
         }
 
         return new MatchCollection($matches);

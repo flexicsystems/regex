@@ -14,6 +14,7 @@ namespace Flexic\Regex\Handler;
 
 use Flexic\Regex\Flag\GrepHandler\GrepHandlerFlagInterface;
 use Flexic\Regex\Pattern;
+use Flexic\Regex\RegexException;
 use Flexic\Regex\Result\MatchCollection;
 
 final class GrepHandler extends AbstractHandler
@@ -33,7 +34,7 @@ final class GrepHandler extends AbstractHandler
         );
 
         if (false === $result) {
-            throw new \RuntimeException(\sprintf('Error while grep input with pattern "%s"', $pattern));
+            throw new RegexException('preg_grep', \sprintf('Error while grep input with pattern "%s"', $pattern));
         }
 
         return new MatchCollection($result);

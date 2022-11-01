@@ -14,6 +14,7 @@ namespace Flexic\Regex\Handler;
 
 use Flexic\Regex\Flag\MatchHandler\MatchHandlerFlagInterface;
 use Flexic\Regex\Pattern;
+use Flexic\Regex\RegexException;
 use Flexic\Regex\Result\MatchCollection;
 
 final class MatchHandler extends AbstractHandler
@@ -36,7 +37,7 @@ final class MatchHandler extends AbstractHandler
         );
 
         if (false === $result) {
-            throw new \RuntimeException(\sprintf('Error while matching subject "%s" with pattern "%s"', $subject, $pattern));
+            throw new RegexException('preg_match', \sprintf('Error while matching subject "%s" with pattern "%s"', $subject, $pattern));
         }
 
         if (0 === $result) {
