@@ -1,0 +1,21 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Parameter \\$flags of callable Flexic\\\\Regex\\\\Handler\\\\GrepHandler expects array\\<Flexic\\\\Regex\\\\Flag\\\\GrepHandler\\\\GrepHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\GrepHandler\\\\GrepHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\GrepHandler\\\\GrepHandlerFlagInterface\\|int\\> given\\.$#"
+			count: 1
+			path: src/Regex.php
+
+		-
+			message: "#^Parameter \\$flags of callable Flexic\\\\Regex\\\\Handler\\\\MatchAllHandler expects array\\<Flexic\\\\Regex\\\\Flag\\\\MatchHandler\\\\MatchHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\MatchHandler\\\\MatchHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\MatchHandler\\\\MatchHandlerFlagInterface\\|int\\> given\\.$#"
+			count: 1
+			path: src/Regex.php
+
+		-
+			message: "#^Parameter \\$flags of callable Flexic\\\\Regex\\\\Handler\\\\MatchHandler expects array\\<Flexic\\\\Regex\\\\Flag\\\\MatchHandler\\\\MatchHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\MatchHandler\\\\MatchHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\MatchHandler\\\\MatchHandlerFlagInterface\\|int\\> given\\.$#"
+			count: 1
+			path: src/Regex.php
+
+		-
+			message: "#^Parameter \\$flags of callable Flexic\\\\Regex\\\\Handler\\\\SplitHandler expects array\\<Flexic\\\\Regex\\\\Flag\\\\SplitHandler\\\\SplitHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\SplitHandler\\\\SplitHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\SplitHandler\\\\SplitHandlerFlagInterface\\|int\\> given\\.$#"
+			count: 1
+			path: src/Regex.php
