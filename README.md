@@ -1,6 +1,6 @@
 # 🤘 Regex
 
-This package provides modern library for regular expressions.
+This package provides a modern library for regular expressions.
 
 ## Installation
 
