@@ -12,8 +12,6 @@ declare(strict_types=1);
 
 namespace Flexic\Regex;
 
-use Flexic\Regex\Modifier\ModifierInterface;
-
 interface PatternInterface
 {
     /**
@@ -40,5 +38,4 @@ interface PatternInterface
      * Return the array of all modifier what are used.
      */
     public function getModifier(): array;
-
 }
