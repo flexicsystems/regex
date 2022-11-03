@@ -57,6 +57,11 @@ final class MatchCollection
 
     public function position(int $index): MatchItem|MatchCollection|null
     {
+        return $this->get($index);
+    }
+
+    public function get(int $index): MatchItem|MatchCollection|null
+    {
         return $this->matches[$index] ?? null;
     }
 
@@ -86,11 +91,6 @@ final class MatchCollection
     {
         $instance = $this->matches;
         \array_walk($instance, $callback);
-    }
-
-    public function merge(array $array): array
-    {
-        return \array_merge($this->matches, $array);
     }
 
     public function between(int $start, int $end): array

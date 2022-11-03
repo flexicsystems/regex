@@ -55,6 +55,10 @@ abstract class AbstractPattern implements PatternInterface
                 return new $modifier();
             }
 
+            if (\is_string($modifier) && \strlen($modifier) === 1) {
+                return $modifier;
+            }
+
             return null;
         }, $modifier));
     }
