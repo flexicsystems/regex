@@ -15,17 +15,40 @@ namespace Flexic\Regex;
 use Flexic\Regex\Flag\Grep\GrepHandlerFlagInterface;
 use Flexic\Regex\Flag\Match\MatchHandlerFlagInterface;
 use Flexic\Regex\Flag\Split\SplitHandlerFlagInterface;
+use Flexic\Regex\Handler\FilterHandler;
+use Flexic\Regex\Handler\GrepHandler;
+use Flexic\Regex\Handler\MatchAllHandler;
+use Flexic\Regex\Handler\MatchHandler;
+use Flexic\Regex\Handler\ReplaceHandler;
+use Flexic\Regex\Handler\SplitHandler;
 use Flexic\Regex\Result\MatchCollection;
 
 final class Regex
 {
+    private readonly MatchHandler $matchHandler;
+    private readonly MatchAllHandler $matchAllHandler;
+    private readonly SplitHandler $splitHandler;
+    private readonly GrepHandler $grepHandler;
+    private readonly FilterHandler $filterHandler;
+    private readonly ReplaceHandler $replaceHandler;
+
+    public function __construct()
+    {
+        $this->matchHandler = new MatchHandler();
+        $this->matchAllHandler = new MatchAllHandler();
+        $this->splitHandler = new SplitHandler();
+        $this->grepHandler = new GrepHandler();
+        $this->filterHandler = new FilterHandler();
+        $this->replaceHandler = new ReplaceHandler();
+    }
+
     public function match(
         PatternInterface|string $pattern,
         string $subject,
         int $offset = 0,
         array|MatchHandlerFlagInterface|int ...$flags,
     ): MatchCollection {
-        return (new Handler\MatchHandler())(
+        return $this->matchHandler->__invoke(
             pattern: $pattern,
             subject: $subject,
             offset: $offset,
@@ -39,7 +62,7 @@ final class Regex
         int $offset = 0,
         array|MatchHandlerFlagInterface|int ...$flags,
     ): MatchCollection {
-        return (new Handler\MatchAllHandler())(
+        return $this->matchAllHandler->__invoke(
             pattern: $pattern,
             subject: $subject,
             offset: $offset,
@@ -53,7 +76,7 @@ final class Regex
         int $limit = -1,
         array|SplitHandlerFlagInterface|int ...$flags,
     ): MatchCollection {
-        return (new Handler\SplitHandler())(
+        return $this->splitHandler->__invoke(
             pattern: $pattern,
             subject: $subject,
             limit: $limit,
@@ -66,7 +89,7 @@ final class Regex
         array $input,
         array|GrepHandlerFlagInterface|int ...$flags,
     ): MatchCollection {
-        return (new Handler\GrepHandler())(
+        return $this->grepHandler->__invoke(
             pattern: $pattern,
             input: $input,
             flags: $flags,
@@ -80,7 +103,7 @@ final class Regex
         int $limit = -1,
         ?int &$count = null,
     ): string|array|null {
-        return (new Handler\FilterHandler())(
+        return $this->filterHandler->__invoke(
             pattern: $pattern,
             replacement: $replacement,
             subject: $subject,
@@ -96,7 +119,7 @@ final class Regex
         int $limit = -1,
         ?int &$count = null,
     ): string|array|null {
-        return (new Handler\ReplaceHandler())(
+        return $this->replaceHandler->__invoke(
             pattern: $pattern,
             replacement: $replacement,
             subject: $subject,
