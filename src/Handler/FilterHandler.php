@@ -16,18 +16,21 @@ use Flexic\Regex\PatternInterface;
 
 final class FilterHandler extends AbstractHandler
 {
-    public function __invoke(
-        PatternInterface|string|array $pattern,
-        string|array $replacement,
-        string|array $subject,
-        int $limit,
-        ?int &$count = null,
-    ): string|array|null {
+    public function __construct(
+        readonly private PatternInterface|string|array $pattern,
+        readonly private string|array $replacement,
+        readonly private string|array $subject,
+        readonly private int $limit,
+    ) {
+    }
+
+    public function __invoke(?int &$count = null): string|array|null
+    {
         return \preg_filter(
-            $this->reducePattern($pattern),
-            $replacement,
-            $subject,
-            $limit,
+            $this->reducePattern($this->pattern),
+            $this->replacement,
+            $this->subject,
+            $this->limit,
             $count,
         );
     }

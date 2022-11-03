@@ -25,40 +25,18 @@ use Flexic\Regex\Result\MatchCollection;
 
 final class Regex
 {
-    private readonly MatchHandler $matchHandler;
-
-    private readonly MatchAllHandler $matchAllHandler;
-
-    private readonly SplitHandler $splitHandler;
-
-    private readonly GrepHandler $grepHandler;
-
-    private readonly FilterHandler $filterHandler;
-
-    private readonly ReplaceHandler $replaceHandler;
-
-    public function __construct()
-    {
-        $this->matchHandler = new MatchHandler();
-        $this->matchAllHandler = new MatchAllHandler();
-        $this->splitHandler = new SplitHandler();
-        $this->grepHandler = new GrepHandler();
-        $this->filterHandler = new FilterHandler();
-        $this->replaceHandler = new ReplaceHandler();
-    }
-
     public function match(
         PatternInterface|string $pattern,
         string $subject,
         int $offset = 0,
         array|MatchHandlerFlagInterface|int ...$flags,
     ): MatchCollection {
-        return $this->matchHandler->__invoke(
+        return (new MatchHandler(
             pattern: $pattern,
             subject: $subject,
             offset: $offset,
             flags: $flags,
-        );
+        ))();
     }
 
     public function matchAll(
@@ -67,12 +45,12 @@ final class Regex
         int $offset = 0,
         array|MatchHandlerFlagInterface|int ...$flags,
     ): MatchCollection {
-        return $this->matchAllHandler->__invoke(
+        return (new MatchAllHandler(
             pattern: $pattern,
             subject: $subject,
             offset: $offset,
             flags: $flags,
-        );
+        ))();
     }
 
     public function split(
@@ -81,12 +59,12 @@ final class Regex
         int $limit = -1,
         array|SplitHandlerFlagInterface|int ...$flags,
     ): MatchCollection {
-        return $this->splitHandler->__invoke(
+        return (new SplitHandler(
             pattern: $pattern,
             subject: $subject,
             limit: $limit,
             flags: $flags,
-        );
+        ))();
     }
 
     public function grep(
@@ -94,11 +72,11 @@ final class Regex
         array $input,
         array|GrepHandlerFlagInterface|int ...$flags,
     ): MatchCollection {
-        return $this->grepHandler->__invoke(
+        return (new GrepHandler(
             pattern: $pattern,
             input: $input,
             flags: $flags,
-        );
+        ))();
     }
 
     public function filter(
@@ -108,13 +86,12 @@ final class Regex
         int $limit = -1,
         ?int &$count = null,
     ): string|array|null {
-        return $this->filterHandler->__invoke(
+        return (new FilterHandler(
             pattern: $pattern,
             replacement: $replacement,
             subject: $subject,
             limit: $limit,
-            count: $count,
-        );
+        ))(count: $count);
     }
 
     public function replace(
@@ -124,12 +101,11 @@ final class Regex
         int $limit = -1,
         ?int &$count = null,
     ): string|array|null {
-        return $this->replaceHandler->__invoke(
+        return (new ReplaceHandler(
             pattern: $pattern,
             replacement: $replacement,
             subject: $subject,
             limit: $limit,
-            count: $count,
-        );
+        ))(count: $count);
     }
 }

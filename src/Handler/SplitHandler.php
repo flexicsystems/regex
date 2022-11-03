@@ -22,17 +22,21 @@ final class SplitHandler extends AbstractHandler
     /**
      * @param array<int|SplitHandlerFlagInterface>|int|SplitHandlerFlagInterface $flags
      */
-    public function __invoke(
-        PatternInterface|string $pattern,
-        string $subject,
-        int $limit,
-        int|array|SplitHandlerFlagInterface $flags,
-    ): MatchCollection {
+    public function __construct(
+        readonly private PatternInterface|string $pattern,
+        readonly private string $subject,
+        readonly private int $limit,
+        readonly private int|array|SplitHandlerFlagInterface $flags,
+    ) {
+    }
+
+    public function __invoke(): MatchCollection
+    {
         $matches = \preg_split(
-            (string) $pattern,
-            $subject,
-            $limit,
-            $this->reduceFlags($flags),
+            (string) $this->pattern,
+            $this->subject,
+            $this->limit,
+            $this->reduceFlags($this->flags),
         );
 
         if (false === $matches) {

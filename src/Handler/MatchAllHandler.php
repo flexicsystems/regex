@@ -22,18 +22,22 @@ final class MatchAllHandler extends AbstractHandler
     /**
      * @param array<int|MatchHandlerFlagInterface>|int|MatchHandlerFlagInterface $flags
      */
-    public function __invoke(
-        PatternInterface|string $pattern,
-        string $subject,
-        int $offset,
-        int|array|MatchHandlerFlagInterface $flags,
-    ): MatchCollection {
+    public function __construct(
+        readonly private PatternInterface|string $pattern,
+        readonly private string $subject,
+        readonly private int $offset,
+        readonly private int|array|MatchHandlerFlagInterface $flags,
+    ) {
+    }
+
+    public function __invoke(): MatchCollection
+    {
         $result = \preg_match_all(
-            (string) $pattern,
-            $subject,
+            (string) $this->pattern,
+            $this->subject,
             $matches,
-            $this->reduceFlags($flags),
-            $offset,
+            $this->reduceFlags($this->flags),
+            $this->offset,
         );
 
         if (false === $result) {

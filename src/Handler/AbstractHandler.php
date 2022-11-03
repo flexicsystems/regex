@@ -15,7 +15,7 @@ namespace Flexic\Regex\Handler;
 use Flexic\Regex\Flag\FlagInterface;
 use Flexic\Regex\PatternInterface;
 
-abstract class AbstractHandler
+abstract class AbstractHandler implements HandlerInterface
 {
     protected function reduceFlags(
         int|array|FlagInterface $flags,

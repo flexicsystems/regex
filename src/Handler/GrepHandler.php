@@ -22,15 +22,19 @@ final class GrepHandler extends AbstractHandler
     /**
      * @param array<GrepHandlerFlagInterface|int>|GrepHandlerFlagInterface|int $flags
      */
-    public function __invoke(
-        PatternInterface|string $pattern,
-        array $input,
-        int|array|GrepHandlerFlagInterface $flags,
-    ): MatchCollection {
+    public function __construct(
+        readonly private PatternInterface|string $pattern,
+        readonly private array $input,
+        readonly private int|array|GrepHandlerFlagInterface $flags,
+    ) {
+    }
+
+    public function __invoke(): MatchCollection
+    {
         $result = \preg_grep(
-            (string) $pattern,
-            $input,
-            $this->reduceFlags($flags),
+            (string) $this->pattern,
+            $this->input,
+            $this->reduceFlags($this->flags),
         );
 
         if (false === $result) {
