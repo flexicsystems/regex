@@ -10,12 +10,12 @@ declare(strict_types=1);
  * @version 1.0.0
  */
 
-namespace Flexic\Regex\Flag\MatchHandler;
+namespace Flexic\Regex\Flag\Match;
 
-final class UnmatchedAsNull implements MatchHandlerFlagInterface
+final class OffsetCapture implements MatchHandlerFlagInterface
 {
     public function getPregFlag(): int
     {
-        return \PREG_UNMATCHED_AS_NULL;
+        return \PREG_OFFSET_CAPTURE;
     }
 }

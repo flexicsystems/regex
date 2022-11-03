@@ -12,7 +12,7 @@ declare(strict_types=1);
 
 namespace Flexic\Regex\Handler;
 
-use Flexic\Regex\Flag\GrepHandler\GrepHandlerFlagInterface;
+use Flexic\Regex\Flag\Grep\GrepHandlerFlagInterface;
 use Flexic\Regex\PatternInterface;
 use Flexic\Regex\RegexException;
 use Flexic\Regex\Result\MatchCollection;

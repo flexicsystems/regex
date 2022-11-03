@@ -12,7 +12,7 @@ declare(strict_types=1);
 
 namespace Flexic\Regex\Handler;
 
-use Flexic\Regex\Flag\SplitHandler\SplitHandlerFlagInterface;
+use Flexic\Regex\Flag\Split\SplitHandlerFlagInterface;
 use Flexic\Regex\PatternInterface;
 use Flexic\Regex\RegexException;
 use Flexic\Regex\Result\MatchCollection;

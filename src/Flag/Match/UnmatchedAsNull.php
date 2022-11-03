@@ -10,12 +10,12 @@ declare(strict_types=1);
  * @version 1.0.0
  */
 
-namespace Flexic\Regex\Flag\GrepHandler;
+namespace Flexic\Regex\Flag\Match;
 
-final class Invert implements GrepHandlerFlagInterface
+final class UnmatchedAsNull implements MatchHandlerFlagInterface
 {
     public function getPregFlag(): int
     {
-        return \PREG_GREP_INVERT;
+        return \PREG_UNMATCHED_AS_NULL;
     }
 }

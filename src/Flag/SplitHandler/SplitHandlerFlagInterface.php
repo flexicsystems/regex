@@ -10,7 +10,7 @@ declare(strict_types=1);
  * @version 1.0.0
  */
 
-namespace Flexic\Regex\Flag\SplitHandler;
+namespace Flexic\Regex\Flag\Split;
 
 use Flexic\Regex\Flag\FlagInterface;
 

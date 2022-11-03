@@ -10,10 +10,10 @@ declare(strict_types=1);
  * @version 1.0.0
  */
 
-namespace Flexic\Regex\Flag\MatchHandler;
+namespace Flexic\Regex\Flag\Grep;
 
 use Flexic\Regex\Flag\FlagInterface;
 
-interface MatchHandlerFlagInterface extends FlagInterface
+interface GrepHandlerFlagInterface extends FlagInterface
 {
 }
