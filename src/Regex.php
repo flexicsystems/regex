@@ -12,9 +12,9 @@ declare(strict_types=1);
 
 namespace Flexic\Regex;
 
-use Flexic\Regex\Flag\GrepHandler\GrepHandlerFlagInterface;
+use Flexic\Regex\Flag\Grep\GrepHandlerFlagInterface;
 use Flexic\Regex\Flag\Match\MatchHandlerFlagInterface;
-use Flexic\Regex\Flag\SplitHandler\SplitHandlerFlagInterface;
+use Flexic\Regex\Flag\Split\SplitHandlerFlagInterface;
 use Flexic\Regex\Result\MatchCollection;
 
 final class Regex
