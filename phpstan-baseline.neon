@@ -1,61 +1,41 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Parameter \\$flags of callable Flexic\\\\Regex\\\\Handler\\\\GrepHandler expects array\\<Flexic\\\\Regex\\\\Flag\\\\Grep\\\\GrepHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\Grep\\\\GrepHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\GrepHandler\\\\GrepHandlerFlagInterface\\|int\\> given\\.$#"
+			message: "#^Parameter \\$flags of class Flexic\\\\Regex\\\\Handler\\\\GrepHandler constructor expects array\\<Flexic\\\\Regex\\\\Flag\\\\Grep\\\\GrepHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\Grep\\\\GrepHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\Grep\\\\GrepHandlerFlagInterface\\|int\\> given\\.$#"
 			count: 1
 			path: src/Regex.php
 
 		-
-			message: "#^Parameter \\$flags of callable Flexic\\\\Regex\\\\Handler\\\\MatchAllHandler expects array\\<Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\> given\\.$#"
+			message: "#^Parameter \\$flags of class Flexic\\\\Regex\\\\Handler\\\\MatchAllHandler constructor expects array\\<Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\> given\\.$#"
 			count: 1
 			path: src/Regex.php
 
 		-
-			message: "#^Parameter \\$flags of callable Flexic\\\\Regex\\\\Handler\\\\MatchHandler expects array\\<Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\> given\\.$#"
+			message: "#^Parameter \\$flags of class Flexic\\\\Regex\\\\Handler\\\\MatchHandler constructor expects array\\<Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\> given\\.$#"
 			count: 1
 			path: src/Regex.php
 
 		-
-			message: "#^Parameter \\$flags of callable Flexic\\\\Regex\\\\Handler\\\\SplitHandler expects array\\<Flexic\\\\Regex\\\\Flag\\\\Split\\\\SplitHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\Split\\\\SplitHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\SplitHandler\\\\SplitHandlerFlagInterface\\|int\\> given\\.$#"
+			message: "#^Parameter \\$flags of class Flexic\\\\Regex\\\\Handler\\\\SplitHandler constructor expects array\\<Flexic\\\\Regex\\\\Flag\\\\Split\\\\SplitHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\Split\\\\SplitHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\Split\\\\SplitHandlerFlagInterface\\|int\\> given\\.$#"
 			count: 1
 			path: src/Regex.php
 
 		-
-			message: "#^Parameter \\$flags of method Flexic\\\\Regex\\\\Regex\\:\\:grep\\(\\) has invalid type Flexic\\\\Regex\\\\Flag\\\\GrepHandler\\\\GrepHandlerFlagInterface\\.$#"
-			count: 1
-			path: src/Regex.php
-
-		-
-			message: "#^Parameter \\$flags of method Flexic\\\\Regex\\\\Regex\\:\\:split\\(\\) has invalid type Flexic\\\\Regex\\\\Flag\\\\SplitHandler\\\\SplitHandlerFlagInterface\\.$#"
-			count: 1
-			path: src/Regex.php
-
-		-
-			message: "#^Parameter \\$flags of callable Flexic\\\\Regex\\\\Handler\\\\GrepHandler expects array\\<Flexic\\\\Regex\\\\Flag\\\\Grep\\\\GrepHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\Grep\\\\GrepHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\GrepHandler\\\\GrepHandlerFlagInterface\\|int\\> given\\.$#"
+			message: "#^Parameter \\$flags of class Flexic\\\\Regex\\\\Handler\\\\GrepHandler constructor expects array\\<Flexic\\\\Regex\\\\Flag\\\\Grep\\\\GrepHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\Grep\\\\GrepHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\Grep\\\\GrepHandlerFlagInterface\\|int\\> given\\.$#"
 			count: 1
 			path: src/StaticRegex.php
 
 		-
-			message: "#^Parameter \\$flags of callable Flexic\\\\Regex\\\\Handler\\\\MatchAllHandler expects array\\<Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\> given\\.$#"
+			message: "#^Parameter \\$flags of class Flexic\\\\Regex\\\\Handler\\\\MatchAllHandler constructor expects array\\<Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\> given\\.$#"
 			count: 1
 			path: src/StaticRegex.php
 
 		-
-			message: "#^Parameter \\$flags of callable Flexic\\\\Regex\\\\Handler\\\\MatchHandler expects array\\<Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\> given\\.$#"
+			message: "#^Parameter \\$flags of class Flexic\\\\Regex\\\\Handler\\\\MatchHandler constructor expects array\\<Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\> given\\.$#"
 			count: 1
 			path: src/StaticRegex.php
 
 		-
-			message: "#^Parameter \\$flags of callable Flexic\\\\Regex\\\\Handler\\\\SplitHandler expects array\\<Flexic\\\\Regex\\\\Flag\\\\Split\\\\SplitHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\Split\\\\SplitHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\SplitHandler\\\\SplitHandlerFlagInterface\\|int\\> given\\.$#"
-			count: 1
-			path: src/StaticRegex.php
-
-		-
-			message: "#^Parameter \\$flags of method Flexic\\\\Regex\\\\StaticRegex\\:\\:grep\\(\\) has invalid type Flexic\\\\Regex\\\\Flag\\\\GrepHandler\\\\GrepHandlerFlagInterface\\.$#"
-			count: 1
-			path: src/StaticRegex.php
-
-		-
-			message: "#^Parameter \\$flags of method Flexic\\\\Regex\\\\StaticRegex\\:\\:split\\(\\) has invalid type Flexic\\\\Regex\\\\Flag\\\\SplitHandler\\\\SplitHandlerFlagInterface\\.$#"
+			message: "#^Parameter \\$flags of class Flexic\\\\Regex\\\\Handler\\\\SplitHandler constructor expects array\\<Flexic\\\\Regex\\\\Flag\\\\Split\\\\SplitHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\Split\\\\SplitHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\Split\\\\SplitHandlerFlagInterface\\|int\\> given\\.$#"
 			count: 1
 			path: src/StaticRegex.php

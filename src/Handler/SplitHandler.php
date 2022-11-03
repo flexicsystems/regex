@@ -30,6 +30,9 @@ final class SplitHandler extends AbstractHandler
     ) {
     }
 
+    /**
+     * @throws RegexException
+     */
     public function __invoke(): MatchCollection
     {
         $matches = \preg_split(
@@ -40,7 +43,7 @@ final class SplitHandler extends AbstractHandler
         );
 
         if (false === $matches) {
-            throw new RegexException('preg_split', \sprintf('Error while splitting subject "%s" with pattern "%s"', $subject, $pattern));
+            throw new RegexException('preg_split', \sprintf('Error while splitting subject "%s" with pattern "%s"', $this->subject, $this->pattern));
         }
 
         return new MatchCollection($matches);

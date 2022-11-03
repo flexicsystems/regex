@@ -30,6 +30,9 @@ final class MatchHandler extends AbstractHandler
     ) {
     }
 
+    /**
+     * @throws RegexException
+     */
     public function __invoke(): MatchCollection
     {
         $result = \preg_match(
@@ -41,7 +44,7 @@ final class MatchHandler extends AbstractHandler
         );
 
         if (false === $result) {
-            throw new RegexException('preg_match', \sprintf('Error while matching subject "%s" with pattern "%s"', $subject, $pattern));
+            throw new RegexException('preg_match', \sprintf('Error while matching subject "%s" with pattern "%s"', $this->subject, $this->pattern));
         }
 
         if (0 === $result) {

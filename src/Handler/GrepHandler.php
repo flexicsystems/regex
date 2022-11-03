@@ -29,6 +29,9 @@ final class GrepHandler extends AbstractHandler
     ) {
     }
 
+    /**
+     * @throws RegexException
+     */
     public function __invoke(): MatchCollection
     {
         $result = \preg_grep(
@@ -38,7 +41,7 @@ final class GrepHandler extends AbstractHandler
         );
 
         if (false === $result) {
-            throw new RegexException('preg_grep', \sprintf('Error while grep input with pattern "%s"', $pattern));
+            throw new RegexException('preg_grep', \sprintf('Error while grep input with pattern "%s"', $this->pattern));
         }
 
         return new MatchCollection($result);
