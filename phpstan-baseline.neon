@@ -6,7 +6,7 @@ parameters:
 			path: src/Regex.php
 
 		-
-			message: "#^Parameter \\$flags of class Flexic\\\\Regex\\\\Handler\\\\MatchAllHandler constructor expects array\\<Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\> given\\.$#"
+			message: "#^Parameter \\$flags of class Flexic\\\\Regex\\\\Handler\\\\MatchAllHandler constructor expects array\\<Flexic\\\\Regex\\\\Flag\\\\MatchAll\\\\MatchAllHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\MatchAll\\\\MatchAllHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\MatchAll\\\\MatchAllHandlerFlagInterface\\|int\\> given\\.$#"
 			count: 1
 			path: src/Regex.php
 
@@ -26,7 +26,7 @@ parameters:
 			path: src/StaticRegex.php
 
 		-
-			message: "#^Parameter \\$flags of class Flexic\\\\Regex\\\\Handler\\\\MatchAllHandler constructor expects array\\<Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\Match\\\\MatchHandlerFlagInterface\\|int\\> given\\.$#"
+			message: "#^Parameter \\$flags of class Flexic\\\\Regex\\\\Handler\\\\MatchAllHandler constructor expects array\\<Flexic\\\\Regex\\\\Flag\\\\MatchAll\\\\MatchAllHandlerFlagInterface\\|int\\>\\|Flexic\\\\Regex\\\\Flag\\\\MatchAll\\\\MatchAllHandlerFlagInterface\\|int, array\\<int\\|string, array\\|Flexic\\\\Regex\\\\Flag\\\\MatchAll\\\\MatchAllHandlerFlagInterface\\|int\\> given\\.$#"
 			count: 1
 			path: src/StaticRegex.php
 
