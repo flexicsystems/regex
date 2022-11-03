@@ -26,10 +26,15 @@ use Flexic\Regex\Result\MatchCollection;
 final class Regex
 {
     private readonly MatchHandler $matchHandler;
+
     private readonly MatchAllHandler $matchAllHandler;
+
     private readonly SplitHandler $splitHandler;
+
     private readonly GrepHandler $grepHandler;
+
     private readonly FilterHandler $filterHandler;
+
     private readonly ReplaceHandler $replaceHandler;
 
     public function __construct()
