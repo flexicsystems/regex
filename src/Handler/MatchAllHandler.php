@@ -12,7 +12,7 @@ declare(strict_types=1);
 
 namespace Flexic\Regex\Handler;
 
-use Flexic\Regex\Flag\Match\MatchHandlerFlagInterface;
+use Flexic\Regex\Flag\MatchAll\MatchAllHandlerFlagInterface;
 use Flexic\Regex\PatternInterface;
 use Flexic\Regex\RegexException;
 use Flexic\Regex\Result\MatchCollection;
@@ -20,13 +20,13 @@ use Flexic\Regex\Result\MatchCollection;
 final class MatchAllHandler extends AbstractHandler
 {
     /**
-     * @param array<int|MatchHandlerFlagInterface>|int|MatchHandlerFlagInterface $flags
+     * @param array<int|MatchAllHandlerFlagInterface>|int|MatchAllHandlerFlagInterface $flags
      */
     public function __construct(
         readonly private PatternInterface|string $pattern,
         readonly private string $subject,
         readonly private int $offset,
-        readonly private int|array|MatchHandlerFlagInterface $flags,
+        readonly private int|array|MatchAllHandlerFlagInterface $flags,
     ) {
     }
 

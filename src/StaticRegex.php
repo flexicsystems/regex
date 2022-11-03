@@ -14,6 +14,7 @@ namespace Flexic\Regex;
 
 use Flexic\Regex\Flag\Grep\GrepHandlerFlagInterface;
 use Flexic\Regex\Flag\Match\MatchHandlerFlagInterface;
+use Flexic\Regex\Flag\MatchAll\MatchAllHandlerFlagInterface;
 use Flexic\Regex\Flag\Split\SplitHandlerFlagInterface;
 use Flexic\Regex\Result\MatchCollection;
 
@@ -37,7 +38,7 @@ final class StaticRegex implements RegexInterface
         PatternInterface|string $pattern,
         string $subject,
         int $offset = 0,
-        array|MatchHandlerFlagInterface|int ...$flags,
+        array|MatchAllHandlerFlagInterface|int ...$flags,
     ): MatchCollection {
         return (new Handler\MatchAllHandler(
             pattern: $pattern,
