@@ -17,18 +17,14 @@ use Flexic\Regex\Modifier\ModifierInterface;
 interface PatternInterface
 {
     /**
-     * @param string                   $pattern     The pattern string to match
-     * @param ModifierInterface|string ...$modifier All modifier to use
-     */
-    public function __construct(
-        string $pattern,
-        ModifierInterface|string ...$modifier,
-    );
-
-    /**
      * Convert the pattern to a valid regex pattern.
      */
     public function __toString(): string;
+
+    /**
+     * Set the pattern string.
+     */
+    public function setPattern(string $pattern): void;
 
     /**
      * Return the pattern string.
@@ -36,7 +32,13 @@ interface PatternInterface
     public function getPattern(): string;
 
     /**
-     * The array of all modifier what are used.
+     * Set the array of used modifier.
+     */
+    public function setModifier(array $modifier): void;
+
+    /**
+     * Return the array of all modifier what are used.
      */
     public function getModifier(): array;
+
 }
