@@ -13,8 +13,6 @@ declare(strict_types=1);
 namespace Flexic\Regex\Pattern;
 
 use Flexic\Regex\AbstractPattern;
-use Flexic\Regex\Modifier\MultiLine;
-use Flexic\Regex\Modifier\SingleLine;
 
 final class DateTimePattern extends AbstractPattern
 {
