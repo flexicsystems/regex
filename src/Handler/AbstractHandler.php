@@ -13,7 +13,6 @@ declare(strict_types=1);
 namespace Flexic\Regex\Handler;
 
 use Flexic\Regex\Flag\FlagInterface;
-use Flexic\Regex\Pattern;
 use Flexic\Regex\PatternInterface;
 
 abstract class AbstractHandler

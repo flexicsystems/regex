@@ -12,7 +12,6 @@ declare(strict_types=1);
 
 namespace Flexic\Regex\Handler;
 
-use Flexic\Regex\Pattern;
 use Flexic\Regex\PatternInterface;
 
 final class FilterHandler extends AbstractHandler
