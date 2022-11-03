@@ -17,7 +17,7 @@ use Flexic\Regex\Flag\Match\MatchHandlerFlagInterface;
 use Flexic\Regex\Flag\Split\SplitHandlerFlagInterface;
 use Flexic\Regex\Result\MatchCollection;
 
-final class StaticRegex
+final class StaticRegex implements RegexInterface
 {
     public static function match(
         PatternInterface|string $pattern,

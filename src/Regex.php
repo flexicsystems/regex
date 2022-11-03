@@ -23,7 +23,7 @@ use Flexic\Regex\Handler\ReplaceHandler;
 use Flexic\Regex\Handler\SplitHandler;
 use Flexic\Regex\Result\MatchCollection;
 
-final class Regex
+final class Regex implements RegexInterface
 {
     /**
      * @throws RegexException
