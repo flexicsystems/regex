@@ -45,19 +45,19 @@ final class MatchCollection
         return $this->matches;
     }
 
-    public function first(): MatchItem|MatchCollection
+    public function first(): MatchItem|MatchCollection|null
     {
-        return $this->matches[0];
+        return $this->matches[0] ?? null;
     }
 
-    public function last(): MatchItem|MatchCollection
+    public function last(): MatchItem|MatchCollection|null
     {
-        return $this->matches[\count($this->matches) - 1];
+        return $this->matches[\count($this->matches) - 1] ?? null;
     }
 
-    public function position(int $index): MatchItem|MatchCollection
+    public function position(int $index): MatchItem|MatchCollection|null
     {
-        return $this->matches[$index];
+        return $this->matches[$index] ?? null;
     }
 
     public function iterate(callable $callback): void
@@ -100,6 +100,11 @@ final class MatchCollection
 
     public function asArray(): array
     {
+        return $this->toArray();
+    }
+
+    public function toArray(): array
+    {
         return \array_map(static function (MatchItem|MatchCollection $match): mixed {
             if ($match instanceof self) {
                 return $match->asArray();
@@ -107,10 +112,5 @@ final class MatchCollection
 
             return $match->value();
         }, $this->matches);
-    }
-
-    public function toArray(): array
-    {
-        return $this->asArray();
     }
 }
