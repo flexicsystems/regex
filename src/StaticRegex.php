@@ -25,12 +25,12 @@ final class StaticRegex
         int $offset = 0,
         array|MatchHandlerFlagInterface|int ...$flags,
     ): MatchCollection {
-        return (new Handler\MatchHandler())(
+        return (new Handler\MatchHandler(
             pattern: $pattern,
             subject: $subject,
             offset: $offset,
             flags: $flags,
-        );
+        ))();
     }
 
     public static function matchAll(
@@ -39,12 +39,12 @@ final class StaticRegex
         int $offset = 0,
         array|MatchHandlerFlagInterface|int ...$flags,
     ): MatchCollection {
-        return (new Handler\MatchAllHandler())(
+        return (new Handler\MatchAllHandler(
             pattern: $pattern,
             subject: $subject,
             offset: $offset,
             flags: $flags,
-        );
+        ))();
     }
 
     public static function split(
@@ -53,12 +53,12 @@ final class StaticRegex
         int $limit = -1,
         array|SplitHandlerFlagInterface|int ...$flags,
     ): MatchCollection {
-        return (new Handler\SplitHandler())(
+        return (new Handler\SplitHandler(
             pattern: $pattern,
             subject: $subject,
             limit: $limit,
             flags: $flags,
-        );
+        ))();
     }
 
     public static function grep(
@@ -66,11 +66,11 @@ final class StaticRegex
         array $input,
         array|GrepHandlerFlagInterface|int ...$flags,
     ): MatchCollection {
-        return (new Handler\GrepHandler())(
+        return (new Handler\GrepHandler(
             pattern: $pattern,
             input: $input,
             flags: $flags,
-        );
+        ))();
     }
 
     public static function filter(
@@ -80,13 +80,12 @@ final class StaticRegex
         int $limit = -1,
         ?int &$count = null,
     ): string|array|null {
-        return (new Handler\FilterHandler())(
+        return (new Handler\FilterHandler(
             pattern: $pattern,
             replacement: $replacement,
             subject: $subject,
             limit: $limit,
-            count: $count,
-        );
+        ))(count: $count);
     }
 
     public static function replace(
@@ -96,12 +95,11 @@ final class StaticRegex
         int $limit = -1,
         ?int &$count = null,
     ): string|array|null {
-        return (new Handler\ReplaceHandler())(
+        return (new Handler\ReplaceHandler(
             pattern: $pattern,
             replacement: $replacement,
             subject: $subject,
             limit: $limit,
-            count: $count,
-        );
+        ))(count: $count);
     }
 }

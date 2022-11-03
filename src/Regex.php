@@ -25,6 +25,9 @@ use Flexic\Regex\Result\MatchCollection;
 
 final class Regex
 {
+    /**
+     * @throws RegexException
+     */
     public function match(
         PatternInterface|string $pattern,
         string $subject,
@@ -39,6 +42,9 @@ final class Regex
         ))();
     }
 
+    /**
+     * @throws RegexException
+     */
     public function matchAll(
         PatternInterface|string $pattern,
         string $subject,
@@ -53,6 +59,9 @@ final class Regex
         ))();
     }
 
+    /**
+     * @throws RegexException
+     */
     public function split(
         PatternInterface|string $pattern,
         string $subject,
@@ -67,6 +76,9 @@ final class Regex
         ))();
     }
 
+    /**
+     * @throws RegexException
+     */
     public function grep(
         PatternInterface|string $pattern,
         array $input,
