@@ -14,7 +14,7 @@ namespace Flexic\Regex;
 
 use Flexic\Regex\Modifier\ModifierInterface;
 
-final class Pattern
+final class Pattern implements PatternInterface
 {
     private readonly string $pattern;
 

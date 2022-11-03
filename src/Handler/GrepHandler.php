@@ -14,6 +14,7 @@ namespace Flexic\Regex\Handler;
 
 use Flexic\Regex\Flag\GrepHandler\GrepHandlerFlagInterface;
 use Flexic\Regex\Pattern;
+use Flexic\Regex\PatternInterface;
 use Flexic\Regex\RegexException;
 use Flexic\Regex\Result\MatchCollection;
 
@@ -23,7 +24,7 @@ final class GrepHandler extends AbstractHandler
      * @param array<GrepHandlerFlagInterface|int>|GrepHandlerFlagInterface|int $flags
      */
     public function __invoke(
-        Pattern|string $pattern,
+        PatternInterface|string $pattern,
         array $input,
         int|array|GrepHandlerFlagInterface $flags,
     ): MatchCollection {
