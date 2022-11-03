@@ -1,7 +1,7 @@
 {
   "name": "flexic/regex",
   "description": "Modern regular expression library for PHP",
-  "license": "MIT",
+  "license": "GNU",
   "type": "library",
   "keywords": [
     "regex",
