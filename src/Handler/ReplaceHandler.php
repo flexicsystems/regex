@@ -12,12 +12,12 @@ declare(strict_types=1);
 
 namespace Flexic\Regex\Handler;
 
-use Flexic\Regex\Pattern;
+use Flexic\Regex\PatternInterface;
 
 final class ReplaceHandler extends AbstractHandler
 {
     public function __invoke(
-        Pattern|string|array $pattern,
+        PatternInterface|string|array $pattern,
         string|array $replacement,
         string|array $subject,
         int $limit,

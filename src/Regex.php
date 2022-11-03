@@ -20,7 +20,7 @@ use Flexic\Regex\Result\MatchCollection;
 final class Regex
 {
     public function match(
-        Pattern|string $pattern,
+        PatternInterface|string $pattern,
         string $subject,
         int $offset = 0,
         array|MatchHandlerFlagInterface|int ...$flags,
@@ -34,7 +34,7 @@ final class Regex
     }
 
     public function matchAll(
-        Pattern|string $pattern,
+        PatternInterface|string $pattern,
         string $subject,
         int $offset = 0,
         array|MatchHandlerFlagInterface|int ...$flags,
@@ -48,7 +48,7 @@ final class Regex
     }
 
     public function split(
-        Pattern|string $pattern,
+        PatternInterface|string $pattern,
         string $subject,
         int $limit = -1,
         array|SplitHandlerFlagInterface|int ...$flags,
@@ -62,7 +62,7 @@ final class Regex
     }
 
     public function grep(
-        Pattern|string $pattern,
+        PatternInterface|string $pattern,
         array $input,
         array|GrepHandlerFlagInterface|int ...$flags,
     ): MatchCollection {
@@ -74,7 +74,7 @@ final class Regex
     }
 
     public function filter(
-        Pattern|string|array $pattern,
+        PatternInterface|string|array $pattern,
         string|array $replacement,
         array|string $subject,
         int $limit = -1,
@@ -90,7 +90,7 @@ final class Regex
     }
 
     public function replace(
-        Pattern|string|array $pattern,
+        PatternInterface|string|array $pattern,
         string|array $replacement,
         string|array $subject,
         int $limit = -1,

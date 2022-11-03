@@ -13,7 +13,7 @@ declare(strict_types=1);
 namespace Flexic\Regex\Handler;
 
 use Flexic\Regex\Flag\SplitHandler\SplitHandlerFlagInterface;
-use Flexic\Regex\Pattern;
+use Flexic\Regex\PatternInterface;
 use Flexic\Regex\RegexException;
 use Flexic\Regex\Result\MatchCollection;
 
@@ -23,7 +23,7 @@ final class SplitHandler extends AbstractHandler
      * @param array<int|SplitHandlerFlagInterface>|int|SplitHandlerFlagInterface $flags
      */
     public function __invoke(
-        Pattern|string $pattern,
+        PatternInterface|string $pattern,
         string $subject,
         int $limit,
         int|array|SplitHandlerFlagInterface $flags,
