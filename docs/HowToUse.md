@@ -98,7 +98,7 @@ Whenever a list of matches be found they will be represented as `MatchCollection
 Single matches will be represented as `MatchItem`.
 Based on the result types can be nested.
 
-`Flexic\Regex\Result\MatchCollection`
+[`Flexic\Regex\Result\MatchCollection`](./../src/Result/MatchCollection.php)
 - `hasMatches()` Returns true if matches are found.
 - `count()` Returns the number of matches.
 - `all()` Returns all matches as array. (If value is of type `MatchCollection` or `MatchItem` it will not be converted to array!)
@@ -113,6 +113,6 @@ Based on the result types can be nested.
 - `between(int $start, int $end)` Returns a array with all matches between the given indexes.
 - `asArray()` & `toArray()` Returns all matches as array. (If value is of type `MatchCollection` or `MatchItem` it will be converted to array)
 
-`Flexic\Regex\Result\MatchItem`
+[`Flexic\Regex\Result\MatchItem`](./../src/Result/MatchItem.php)
 - `key()` returns the key of the match.
 - `value()` returns the value of the match.
