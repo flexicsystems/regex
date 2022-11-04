@@ -16,7 +16,6 @@ composer require flexic/regex
 - Method signatures: [MethodSignatures.md](./docs/MethodSignatures.md)
 - Predefined patterns: [PredefinedPattern.md](./docs/PredefinedPattern.md)
 - Examples: [Examples.md](./docs/Examples.md)
-- 
 
 ----
 ### License
