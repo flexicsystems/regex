@@ -16,6 +16,6 @@ final class SetOrder implements MatchAllHandlerFlagInterface
 {
     public function getPregFlag(): int
     {
-        return \PREG_PATTERN_ORDER;
+        return \PREG_SET_ORDER;
     }
 }
