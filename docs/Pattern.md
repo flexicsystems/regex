@@ -21,6 +21,7 @@ Modifiers can be provided as following types:
 - As modifier class (e.g. `Flexic\Regex\Modifier\Insensitive::class`)
 - As modifier object (e.g. `new Flexic\Regex\Modifier\Insensitive()`)
 - As modifier string (e.g. `'i'`)
+- List of modifiers (e.g. `['i', Flexic\Regex\Modifier\Insensitive::class, new Flexic\Regex\Modifier\Insensitive()]`)
 
 ## Available Modifiers
 

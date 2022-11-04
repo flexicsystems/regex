@@ -18,9 +18,11 @@ final class Pattern extends AbstractPattern
 {
     public function __construct(
         string $pattern,
-        ModifierInterface|string ...$modifier,
+        ModifierInterface|string|array ...$modifier,
     ) {
         $this->setPattern($pattern);
-        $this->setModifier($modifier);
+        $this->setModifier(
+            \is_array($modifier[0] ?? null) ? $modifier[0] : $modifier,
+        );
     }
 }
