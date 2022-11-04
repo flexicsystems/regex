@@ -19,7 +19,7 @@ abstract class AbstractPattern implements PatternInterface
     private string $pattern;
 
     /**
-     * @var array<ModifierInterface>
+     * @var array<ModifierInterface|string>
      */
     private array $modifier;
 
@@ -28,8 +28,12 @@ abstract class AbstractPattern implements PatternInterface
         return \sprintf(
             '/%s/%s',
             $this->pattern,
-            \implode('', \array_map(static function (ModifierInterface $modifier) {
-                return $modifier->modifier;
+            \implode('', \array_map(static function (ModifierInterface|string $modifier) {
+                if ($modifier instanceof ModifierInterface) {
+                    return $modifier->modifier;
+                }
+
+                return $modifier;
             }, $this->modifier)),
         );
     }
