@@ -20,8 +20,8 @@ use Flexic\Regex\Modifier\SingleLine;
 /**
  * @internal
  *
- * @covers \Flexic\Regex\Pattern
  * @covers \Flexic\Regex\AbstractPattern
+ * @covers \Flexic\Regex\Pattern
  */
 final class PatternTest extends AbstractTestCase
 {
@@ -39,7 +39,9 @@ final class PatternTest extends AbstractTestCase
         self::assertSame('/[a-zA-Z0-9]/', $pattern->__toString());
     }
 
-    /** @dataProvider modifierProvider */
+    /**
+     * @dataProvider modifierProvider
+     */
     public function testCanSetupWithModifier(array|string|ModifierInterface $modifier): void
     {
         $pattern = new \Flexic\Regex\Pattern(

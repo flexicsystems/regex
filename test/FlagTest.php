@@ -1,5 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * Copyright (c) 2022-2022 Flexic-Systems
+ *
+ * @author Hendrik Legge <hendrik.legge@themepoint.de>
+ *
+ * @version 1.0.0
+ */
+
 namespace Flexic\Regex\Test;
 
 /**
@@ -9,16 +19,18 @@ namespace Flexic\Regex\Test;
  * @covers \Flexic\Regex\Flag\Match\OffsetCapture
  * @covers \Flexic\Regex\Flag\Match\UnmatchedAsNull
  * @covers \Flexic\Regex\Flag\MatchAll\OffsetCapture
- * @covers \Flexic\Regex\Flag\MatchAll\UnmatchedAsNull
- * @covers \Flexic\Regex\Flag\MatchAll\SetOrder
  * @covers \Flexic\Regex\Flag\MatchAll\PatternOrder
+ * @covers \Flexic\Regex\Flag\MatchAll\SetOrder
+ * @covers \Flexic\Regex\Flag\MatchAll\UnmatchedAsNull
  * @covers \Flexic\Regex\Flag\Split\DelimCapture
  * @covers \Flexic\Regex\Flag\Split\NoEmpty
  * @covers \Flexic\Regex\Flag\Split\OffsetCapture
  */
-class FlagTest extends AbstractTestCase
+final class FlagTest extends AbstractTestCase
 {
-    /** @dataProvider provideFlag */
+    /**
+     * @dataProvider provideFlag
+     */
     public function testFlags(
         object $flag,
         string $interfaceClass,
