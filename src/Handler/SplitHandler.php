@@ -16,6 +16,7 @@ use Flexic\Regex\Flag\Split\SplitHandlerFlagInterface;
 use Flexic\Regex\PatternInterface;
 use Flexic\Regex\RegexException;
 use Flexic\Regex\Result\MatchCollection;
+use Flexic\RegexBuilder\Pattern as BuilderPattern;
 
 final class SplitHandler extends AbstractHandler
 {
@@ -23,7 +24,7 @@ final class SplitHandler extends AbstractHandler
      * @param array<int|SplitHandlerFlagInterface>|int|SplitHandlerFlagInterface $flags
      */
     public function __construct(
-        readonly private PatternInterface|string $pattern,
+        readonly private BuilderPattern|PatternInterface|string $pattern,
         readonly private string $subject,
         readonly private int $limit,
         readonly private int|array|SplitHandlerFlagInterface $flags,

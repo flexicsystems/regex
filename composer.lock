@@ -4,8 +4,61 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b8b37970182cf75295f8f17d8d3212e6",
-    "packages": [],
+    "content-hash": "4ea07659f645286ca90e0e39024846db",
+    "packages": [
+        {
+            "name": "flexic/regex-builder",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/flexicsystems/regex-builder.git",
+                "reference": "d525774d70d3364efa3efe2004db2236d7b23ea0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/flexicsystems/regex-builder/zipball/d525774d70d3364efa3efe2004db2236d7b23ea0",
+                "reference": "d525774d70d3364efa3efe2004db2236d7b23ea0",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "ergebnis/php-cs-fixer-config": "^4.9.0",
+                "phpstan/phpstan": "^1.8.8",
+                "phpstan/phpstan-deprecation-rules": "^1.0.0",
+                "phpstan/phpstan-strict-rules": "^1.4.4",
+                "phpunit/phpunit": "^9.5.25"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Flexic\\RegexBuilder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Hendrik Legge",
+                    "email": "hendrik.legge@themepoint.de"
+                }
+            ],
+            "description": "Provides a builder for regular expressions.",
+            "keywords": [
+                "php",
+                "regex",
+                "regular expression"
+            ],
+            "support": {
+                "issues": "https://github.com/flexicsystems/regex-builder/issues",
+                "source": "https://github.com/flexicsystems/regex-builder/tree/0.0.1"
+            },
+            "time": "2022-12-10T22:58:07+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "composer/pcre",

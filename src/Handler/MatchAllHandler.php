@@ -16,6 +16,7 @@ use Flexic\Regex\Flag\MatchAll\MatchAllHandlerFlagInterface;
 use Flexic\Regex\PatternInterface;
 use Flexic\Regex\RegexException;
 use Flexic\Regex\Result\MatchCollection;
+use Flexic\RegexBuilder\Pattern as BuilderPattern;
 
 final class MatchAllHandler extends AbstractHandler
 {
@@ -23,7 +24,7 @@ final class MatchAllHandler extends AbstractHandler
      * @param array<int|MatchAllHandlerFlagInterface>|int|MatchAllHandlerFlagInterface $flags
      */
     public function __construct(
-        readonly private PatternInterface|string $pattern,
+        readonly private BuilderPattern|PatternInterface|string $pattern,
         readonly private string $subject,
         readonly private int $offset,
         readonly private int|array|MatchAllHandlerFlagInterface $flags,

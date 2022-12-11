@@ -15,7 +15,8 @@
     }
   ],
   "require": {
-    "php": "^8.1"
+    "php": "^8.1",
+    "flexic/regex-builder": "^0.0.1"
   },
   "require-dev": {
     "ergebnis/php-cs-fixer-config": "^4.9.0",

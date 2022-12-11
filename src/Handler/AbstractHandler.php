@@ -14,6 +14,7 @@ namespace Flexic\Regex\Handler;
 
 use Flexic\Regex\Flag\FlagInterface;
 use Flexic\Regex\PatternInterface;
+use Flexic\RegexBuilder\Pattern as BuilderPattern;
 
 abstract class AbstractHandler implements HandlerInterface
 {
@@ -49,7 +50,7 @@ abstract class AbstractHandler implements HandlerInterface
     /**
      * @return array<string>
      */
-    protected function reducePattern(PatternInterface|string|array $pattern): array
+    protected function reducePattern(BuilderPattern|PatternInterface|string|array $pattern): array
     {
         if (\is_string($pattern)) {
             return [$pattern];
@@ -59,12 +60,20 @@ abstract class AbstractHandler implements HandlerInterface
             return [(string) $pattern];
         }
 
+        if ($pattern instanceof BuilderPattern) {
+            return [(string) $pattern];
+        }
+
         return \array_filter(\array_map(static function (mixed $pattern) {
             if (\is_string($pattern)) {
                 return $pattern;
             }
 
             if ($pattern instanceof PatternInterface) {
+                return (string) $pattern;
+            }
+
+            if ($pattern instanceof BuilderPattern) {
                 return (string) $pattern;
             }
 

@@ -13,11 +13,12 @@ declare(strict_types=1);
 namespace Flexic\Regex\Handler;
 
 use Flexic\Regex\PatternInterface;
+use Flexic\RegexBuilder\Pattern as BuilderPattern;
 
 final class FilterHandler extends AbstractHandler
 {
     public function __construct(
-        readonly private PatternInterface|string|array $pattern,
+        readonly private BuilderPattern|PatternInterface|string|array $pattern,
         readonly private string|array $replacement,
         readonly private string|array $subject,
         readonly private int $limit,

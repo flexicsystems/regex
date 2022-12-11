@@ -23,6 +23,7 @@ use Flexic\Regex\Handler\MatchHandler;
 use Flexic\Regex\Handler\ReplaceHandler;
 use Flexic\Regex\Handler\SplitHandler;
 use Flexic\Regex\Result\MatchCollection;
+use Flexic\RegexBuilder\Pattern as BuilderPattern;
 
 final class Regex implements RegexInterface
 {
@@ -30,7 +31,7 @@ final class Regex implements RegexInterface
      * @throws RegexException
      */
     public function match(
-        PatternInterface|string $pattern,
+        BuilderPattern|PatternInterface|string $pattern,
         string $subject,
         int $offset = 0,
         array|MatchHandlerFlagInterface|int ...$flags,
@@ -47,7 +48,7 @@ final class Regex implements RegexInterface
      * @throws RegexException
      */
     public function matchAll(
-        PatternInterface|string $pattern,
+        BuilderPattern|PatternInterface|string $pattern,
         string $subject,
         int $offset = 0,
         array|MatchAllHandlerFlagInterface|int ...$flags,
@@ -64,7 +65,7 @@ final class Regex implements RegexInterface
      * @throws RegexException
      */
     public function split(
-        PatternInterface|string $pattern,
+        BuilderPattern|PatternInterface|string $pattern,
         string $subject,
         int $limit = -1,
         array|SplitHandlerFlagInterface|int ...$flags,
@@ -81,7 +82,7 @@ final class Regex implements RegexInterface
      * @throws RegexException
      */
     public function grep(
-        PatternInterface|string $pattern,
+        BuilderPattern|PatternInterface|string $pattern,
         array $input,
         array|GrepHandlerFlagInterface|int ...$flags,
     ): MatchCollection {
@@ -93,7 +94,7 @@ final class Regex implements RegexInterface
     }
 
     public function filter(
-        PatternInterface|string|array $pattern,
+        BuilderPattern|PatternInterface|string|array $pattern,
         string|array $replacement,
         array|string $subject,
         int $limit = -1,
@@ -108,7 +109,7 @@ final class Regex implements RegexInterface
     }
 
     public function replace(
-        PatternInterface|string|array $pattern,
+        BuilderPattern|PatternInterface|string|array $pattern,
         string|array $replacement,
         string|array $subject,
         int $limit = -1,

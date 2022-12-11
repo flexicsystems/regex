@@ -16,6 +16,7 @@ use Flexic\Regex\Flag\Grep\GrepHandlerFlagInterface;
 use Flexic\Regex\PatternInterface;
 use Flexic\Regex\RegexException;
 use Flexic\Regex\Result\MatchCollection;
+use Flexic\RegexBuilder\Pattern as BuilderPattern;
 
 final class GrepHandler extends AbstractHandler
 {
@@ -23,7 +24,7 @@ final class GrepHandler extends AbstractHandler
      * @param array<GrepHandlerFlagInterface|int>|GrepHandlerFlagInterface|int $flags
      */
     public function __construct(
-        readonly private PatternInterface|string $pattern,
+        readonly private BuilderPattern|PatternInterface|string $pattern,
         readonly private array $input,
         readonly private int|array|GrepHandlerFlagInterface $flags,
     ) {
