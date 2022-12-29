@@ -32,7 +32,7 @@ function split(
 
 ## Grep
 ```php
-grep(
+function grep(
     PatternInterface|string $pattern,
     array $input,
     array|GrepHandlerFlagInterface|int ...$flags,
@@ -52,7 +52,7 @@ function filter(
 
 ## Replace
 ```php
-replace(
+function replace(
     PatternInterface|string|array $pattern,
     string|array $replacement,
     string|array $subject,
